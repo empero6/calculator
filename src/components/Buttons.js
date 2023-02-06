@@ -10,6 +10,9 @@ const Buttons = () => {
       <Box>
         <Grid container spacing={4} columns={16}>
           <Grid item xs={5}>
+            <Button>AC</Button>
+          </Grid>
+          <Grid item xs={5}>
             <Button>1</Button>
           </Grid>
           <Grid item xs={5}>
@@ -40,20 +43,23 @@ const Buttons = () => {
             <Button>0</Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>*</Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button>\</Button>
+            <Button>/</Button>
           </Grid>
         </Grid>
       </Box>
       <Box>
-        <Grid container spacing={1}>
-          <Grid item xs={5}>
+        <Grid container spacing={4}>
+          <Grid item>
+            <Button>*</Button>
+          </Grid>
+          <Grid item>
             <Button>+</Button>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item>
             <Button>-</Button>
+          </Grid>
+          <Grid item>
+            <Button>=</Button>
           </Grid>
         </Grid>
       </Box>
