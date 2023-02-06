@@ -2,15 +2,20 @@ import { Card, CardContent, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import classes from "../components/Base.module.css";
 
-const Base = () => {
+const Base = ({ children }) => {
   return (
     <Box
       sx={{
-        display: "inline-block",
-        mx: "2px",
-        transform: "scale(0.8)",
+        display: "flex",
+        flexWrap: "wrap",
+        width: 300,
+        height: 300,
+        border: "1px solid ",
+        borderRadius: "15px",
       }}
-    />
+    >
+      {children}
+    </Box>
   );
 };
 
