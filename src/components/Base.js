@@ -1,6 +1,4 @@
-import { Card, CardContent, Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import classes from "../components/Base.module.css";
+import { Box } from "@mui/material";
 
 const Base = ({ children }) => {
   return (
@@ -11,7 +9,8 @@ const Base = ({ children }) => {
         width: 300,
         height: 300,
         border: "1px solid ",
-        borderRadius: "15px",
+        borderRadius: "5px",
+        margin: "auto",
       }}
     >
       {children}

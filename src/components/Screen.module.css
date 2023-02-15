@@ -1,0 +1,7 @@
+.results-container {
+  width: 99.5%;
+  background-color: gainsboro;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  text-align: end;
+}

@@ -1,8 +1,8 @@
 import { Box, Button, Grid } from "@mui/material";
 
-const Buttons = () => {
-  const inputHandler = () => {
-    console.log("Button Clicked!");
+const Buttons = ({ onClick }) => {
+  const handleClick = (input) => {
+    onClick(input);
   };
 
   return (
@@ -10,56 +10,152 @@ const Buttons = () => {
       <Box>
         <Grid container spacing={4} columns={16}>
           <Grid item xs={5}>
-            <Button>AC</Button>
+            <Button
+              onClick={() => {
+                handleClick("AC");
+              }}
+            >
+              AC
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>1</Button>
+            <Button
+              onClick={() => {
+                handleClick("1");
+              }}
+            >
+              1
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>2</Button>
+            <Button
+              onClick={() => {
+                handleClick("2");
+              }}
+            >
+              2
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>3</Button>
+            <Button
+              onClick={() => {
+                handleClick("3");
+              }}
+            >
+              3
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>4</Button>
+            <Button
+              onClick={() => {
+                handleClick("4");
+              }}
+            >
+              4
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>5</Button>
+            <Button
+              onClick={() => {
+                handleClick("5");
+              }}
+            >
+              5
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>6</Button>
+            <Button
+              onClick={() => {
+                handleClick("6");
+              }}
+            >
+              6
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>7</Button>
+            <Button
+              onClick={() => {
+                handleClick("7");
+              }}
+            >
+              7
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>8</Button>
+            <Button
+              onClick={() => {
+                handleClick("8");
+              }}
+            >
+              8
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>9</Button>
+            <Button
+              onClick={() => {
+                handleClick("9");
+              }}
+            >
+              9
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>0</Button>
+            <Button
+              onClick={() => {
+                handleClick("0");
+              }}
+            >
+              0
+            </Button>
           </Grid>
           <Grid item xs={5}>
-            <Button>/</Button>
+            <Button
+              onClick={() => {
+                handleClick("/");
+              }}
+            >
+              /
+            </Button>
           </Grid>
         </Grid>
       </Box>
       <Box>
         <Grid container spacing={4}>
           <Grid item>
-            <Button>*</Button>
+            <Button
+              onClick={() => {
+                handleClick("*");
+              }}
+            >
+              *
+            </Button>
           </Grid>
           <Grid item>
-            <Button>+</Button>
+            <Button
+              onClick={() => {
+                handleClick("+");
+              }}
+            >
+              +
+            </Button>
           </Grid>
           <Grid item>
-            <Button>-</Button>
+            <Button
+              onClick={() => {
+                handleClick("-");
+              }}
+            >
+              -
+            </Button>
           </Grid>
           <Grid item>
-            <Button>=</Button>
+            <Button
+              onClick={() => {
+                handleClick("=");
+              }}
+            >
+              =
+            </Button>
           </Grid>
         </Grid>
       </Box>
