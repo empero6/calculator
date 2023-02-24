@@ -4,4 +4,14 @@
   border: 1px solid gainsboro;
   border-radius: 3px;
   text-align: end;
+  height: 10%;
+}
+
+.results-top-container {
+  width: 99.5%;
+  background-color: gainsboro;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  text-align: end;
+  height: 10%;
 }

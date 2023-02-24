@@ -9,6 +9,7 @@ function App() {
   const [nextNumber, setNextNumber] = useState(null);
   const [operation, setOperation] = useState(null);
   const [result, setResult] = useState(0);
+  const [upperResult, setUpperResult] = useState(0);
 
   // const [prevVal, setPrevVal] = useState(0);
 
@@ -17,9 +18,6 @@ function App() {
       setResult(0);
       setOperation(null);
       setNextNumber(null);
-      return result;
-    } else if (input === "+/-") {
-      setResult(result * -1);
       return result;
     } else if (input === "%") {
       setResult(result / 100);
@@ -31,8 +29,8 @@ function App() {
       setOperation("-");
       setNextNumber(result);
       setResult(0);
-    } else if (input === "x") {
-      setOperation("x");
+    } else if (input === "*") {
+      setOperation("*");
       setNextNumber(result);
       setResult(0);
     } else if (input === "/") {
@@ -46,7 +44,7 @@ function App() {
       } else if (operation === "-") {
         setResult(nextNumber - result);
         return result;
-      } else if (operation === "x") {
+      } else if (operation === "*") {
         setResult(nextNumber * result);
         return result;
       } else if (operation === "/") {
@@ -63,6 +61,7 @@ function App() {
   return (
     <Fragment>
       <Base>
+        <Box className={classes["results-top-container"]}>{upperResult}</Box>
         <Box className={classes["results-container"]}>{result}</Box>
         <Buttons onClick={handleInput} />
       </Base>
