@@ -16,56 +16,64 @@ function App() {
   // }, [setUpperResult, operation, result]);
 
   const handleInput = (input) => {
-    if (input === "AC") {
-      setResult(0);
-      setOperation(null);
-      setNextNumber(null);
-      setUpperResult();
-      return result;
-    } else if (input === "%") {
-      setResult(result / 100);
-    } else if (input === "+") {
-      setOperation("+");
-      setNextNumber(result);
-      setResult(0);
-      setUpperResult(result + operation);
-    } else if (input === "-") {
-      setOperation("-");
-      setNextNumber(result);
-      setResult(0);
-      setUpperResult(result + operation);
-    } else if (input === "*") {
-      setOperation("*");
-      setNextNumber(result);
-      setResult(0);
-      setUpperResult(result + "*");
-    } else if (input === "/") {
-      setOperation("/");
-      setNextNumber(result);
-      setResult(0);
-      setUpperResult(result + "/");
-    } else if (input === "=") {
-      if (operation === "+") {
-        setResult(nextNumber + result);
+    switch (input) {
+      case "AC":
+        setResult(0);
+        setOperation(null);
+        setNextNumber(null);
         setUpperResult();
         return result;
-      } else if (operation === "-") {
-        setResult(nextNumber - result);
-        setUpperResult();
-        return result;
-      } else if (operation === "*") {
-        setResult(nextNumber * result);
-        setUpperResult();
-        return result;
-      } else if (operation === "/") {
-        setResult(nextNumber / result);
-        console.log(upperResult);
-        return result;
-      }
-      setOperation(null);
-      setNextNumber(null);
-    } else {
-      setResult(parseFloat(result.toString() + input));
+      case "%":
+        setResult(result / 100);
+        break;
+      case "+":
+        setOperation("+");
+        setNextNumber(result);
+        setResult(0);
+        setUpperResult(result + input);
+        break;
+      case "-":
+        setOperation("-");
+        setNextNumber(result);
+        setResult(0);
+        setUpperResult(result + input);
+        break;
+      case "*":
+        setOperation("*");
+        setNextNumber(result);
+        setResult(0);
+        setUpperResult(result + input);
+        break;
+      case "/":
+        setOperation("/");
+        setNextNumber(result);
+        setResult(0);
+        setUpperResult(result + input);
+        break;
+      case "=":
+        if (operation === "+") {
+          setResult(nextNumber + result);
+          setUpperResult();
+          return result;
+        } else if (operation === "-") {
+          setResult(nextNumber - result);
+          setUpperResult();
+          return result;
+        } else if (operation === "*") {
+          setResult(nextNumber * result);
+          setUpperResult();
+          return result;
+        } else if (operation === "/") {
+          setResult(nextNumber / result);
+          setUpperResult();
+          return result;
+        }
+        setOperation(null);
+        setNextNumber(null);
+        break;
+      default:
+        setResult(parseFloat(result.toString() + input));
+        break;
     }
   };
 
@@ -73,7 +81,6 @@ function App() {
     <Fragment>
       <Base>
         <Box className={classes["results-top-container"]}>{upperResult}</Box>
-        {console.log(upperResult)}
         <Box className={classes["results-container"]}>{result}</Box>
         <Buttons onClick={handleInput} />
       </Base>

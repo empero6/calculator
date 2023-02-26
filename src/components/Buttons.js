@@ -5,158 +5,58 @@ const Buttons = ({ onClick }) => {
     onClick(input);
   };
 
+  const numOptions = [
+    "AC",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "/",
+  ];
+
+  const operatorOptions = ["*", "+", "-", "="];
+
   return (
     <Box sx={{ display: "flex" }}>
       <Box>
         <Grid container spacing={4} columns={16}>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("AC");
-              }}
-            >
-              AC
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("1");
-              }}
-            >
-              1
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("2");
-              }}
-            >
-              2
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("3");
-              }}
-            >
-              3
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("4");
-              }}
-            >
-              4
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("5");
-              }}
-            >
-              5
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("6");
-              }}
-            >
-              6
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("7");
-              }}
-            >
-              7
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("8");
-              }}
-            >
-              8
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("9");
-              }}
-            >
-              9
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("0");
-              }}
-            >
-              0
-            </Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Button
-              onClick={() => {
-                handleClick("/");
-              }}
-            >
-              /
-            </Button>
-          </Grid>
+          {numOptions.map((x) => {
+            return (
+              <Grid item xs={5}>
+                <Button
+                  onclick={() => {
+                    handleClick(x);
+                  }}
+                >
+                  {x}
+                </Button>
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
+
       <Box>
-        <Grid container spacing={4}>
-          <Grid item>
-            <Button
-              onClick={() => {
-                handleClick("*");
-              }}
-            >
-              *
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={() => {
-                handleClick("+");
-              }}
-            >
-              +
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={() => {
-                handleClick("-");
-              }}
-            >
-              -
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={() => {
-                handleClick("=");
-              }}
-            >
-              =
-            </Button>
-          </Grid>
+        <Grid container spacing={4} columns={16}>
+          {operatorOptions.map((x) => {
+            return (
+              <Grid item>
+                <Button
+                  onclick={() => {
+                    handleClick(x);
+                  }}
+                >
+                  {x}
+                </Button>
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
     </Box>
